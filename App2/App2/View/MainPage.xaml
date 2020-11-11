@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App2"
+             xmlns:viewModel="clr-namespace:App2.ViewModel;assembly=App2"
+             x:Class="App2.View.MainPage"
+             x:DataType="viewModel:MainPageViewModel"
+             BackgroundColor="Aquamarine"
+             Title="Searh City"
+             >
+
+       <StackLayout>
+              <StackLayout  VerticalOptions="Start">
+                     <!-- top controls -->
+                     <Editor Placeholder="Sök på en stad" Text="{Binding City}"></Editor>
+              </StackLayout>
+
+              <StackLayout VerticalOptions="CenterAndExpand">
+                     <!-- middle controls -->
+                     <Image Source=""></Image>
+                     
+                     <Label Text="{Binding Forecast.Name }"
+                            HorizontalOptions="Center"
+                            VerticalOptions="CenterAndExpand" />
+                     <Label Text="{Binding Forecast.Main.Temp}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="CenterAndExpand"/>
+                     <Label Text="{Binding Forecast.Main.Feels_Like}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="CenterAndExpand"/>
+                     <Label Text="{Binding Forecast.sys.country}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="CenterAndExpand"/>
+              </StackLayout>
+
+              <StackLayout VerticalOptions="End">
+                     <!-- bottom controls -->
+                     <Button Text="Get weather" Command="{Binding ButtonAction }"></Button>
+              </StackLayout>
+       </StackLayout>
+
+
+    
+</ContentPage>
+
+
+
+    
