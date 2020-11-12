@@ -5,7 +5,7 @@
              xmlns:viewModel="clr-namespace:App2.ViewModel;assembly=App2"
              x:Class="App2.View.MainPage"
              x:DataType="viewModel:MainPageViewModel"
-             BackgroundColor="Aquamarine"
+             BackgroundColor="Goldenrod"
              Title="Searh City"
              >
 
@@ -17,24 +17,52 @@
 
               <StackLayout VerticalOptions="CenterAndExpand">
                      <!-- middle controls -->
-                     <Image x:Name="WeatherIcon" Source="{Binding Path=FullIcon}"></Image>
-                     
+                     <Image x:Name="WeatherIcon" Source="{Binding Imagesource}"/>
+                     <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Name:" TextColor="Red"/>
+                     </StackLayout>
                      <Label Text="{Binding Forecast.Name }"
                             HorizontalOptions="Center"
                             VerticalOptions="CenterAndExpand" 
-                            FontSize="Large"/>
+                            FontSize="Large"
+                            TextColor="White"/>
+                     <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Description:" TextColor="Red"/>
+                     </StackLayout>
+                     <Label Text="{Binding Forecast.Weather[0].description}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="CenterAndExpand"
+                            FontSize="Large"
+                            TextColor="White"/>
+                     <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Temp:" TextColor="Red"/>
+                     </StackLayout>
                      <Label Text="{Binding Forecast.Main.Temp}"
                             HorizontalOptions="Center"
                             VerticalOptions="CenterAndExpand"
-                            FontSize="Large"/>
+                            FontSize="Large"
+                            TextColor="White"/>
+                     <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Feels like:" TextColor="Red"/>
+                     </StackLayout>
                      <Label Text="{Binding Forecast.Main.Feels_Like}"
                             HorizontalOptions="Center"
                             VerticalOptions="CenterAndExpand"
-                            FontSize="Large"/>
+                            FontSize="Large"
+                            TextColor="White"/>
+                     <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Country:" TextColor="Red"/>
+                     </StackLayout>
                      <Label Text="{Binding Forecast.sys.country}"
                             HorizontalOptions="Center"
                             VerticalOptions="CenterAndExpand"
-                            FontSize="Large"/>
+                            FontSize="Large"
+                            TextColor="White"/>
+                     <!--<Label Text="{Binding Imagesource}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="CenterAndExpand"
+                            FontSize="Large"
+                            TextColor="White"/>-->
               </StackLayout>
 
               <StackLayout VerticalOptions="End">

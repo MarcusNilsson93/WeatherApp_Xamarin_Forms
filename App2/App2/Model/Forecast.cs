@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace App2.Model
 {
@@ -8,6 +9,8 @@ namespace App2.Model
        public WeatherData Main { get; set; }
        
        public Sys sys { get; set; }
+       
+       public List <Weather> Weather{ get; set; }
 
     }
 
@@ -41,4 +44,19 @@ namespace App2.Model
                    $"countryCode{country} sunRice{sunRice} sunset{sunSet}";
         }
     }
+
+    public class Weather
+    {
+        public int id { get; set; } 
+        public string main { get; set; } 
+        public string description { get; set; } 
+        public string icon { get; set; }
+        
+
+        public override string ToString()
+        {
+            return $"IconCode{icon}";
+        }
+    }
+    
 }

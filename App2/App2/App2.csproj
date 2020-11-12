@@ -21,4 +21,12 @@
         <SubType>Code</SubType>
       </Compile>
     </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Backgound\Appicon.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Backgound" />
+    </ItemGroup>
 </Project>

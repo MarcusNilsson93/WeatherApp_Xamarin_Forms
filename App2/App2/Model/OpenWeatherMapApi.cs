@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Mime;
 using System.Threading.Tasks;
+using App2.ViewModel;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 
@@ -52,6 +53,7 @@ namespace App2.Model
                 //Debug.WriteLine(weatherInfo.sys);
                 //Debug.WriteLine(weatherInfo.Main);
                 //Return that object
+                
                 return weatherInfo;
                 
 

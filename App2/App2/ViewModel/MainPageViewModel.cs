@@ -21,6 +21,7 @@ namespace App2.ViewModel
                 Debug.WriteLine("Här är innan anrop");
                 Debug.WriteLine(_openWeatherMapApi.GetCityUri(_city));
                 Forecast = await _openWeatherMapApi.GetWeather(_openWeatherMapApi.GetCityUri(_city));
+                ImgCode = Forecast.Weather[0].icon;
 
             }, canExecute: () => true);
         }
@@ -49,17 +50,33 @@ namespace App2.ViewModel
                 RefreshCanExecute();
             }
         }
+        public Command ButtonAction { get; set; }
+        private string _imgCode;
 
-        private string _fullIcon { get; set; }
-
-        public string FullIcon
+        public string ImgCode
         {
-            get => _fullIcon;
-            set => _fullIcon = value;
-            
+            get => _imgCode;
+            set
+            {
+                _imgCode = value;
+                RefreshCanExecute();
+                OnPropertyChanged();
+            } 
         }
 
-        public Command ButtonAction { get; set; }
+        private string _imagesource;
+
+        public string Imagesource
+        {
+            get => _imagesource = $"http://openweathermap.org/img/wn/{ImgCode}@2x.png";
+            set
+            {
+                _imagesource = value;
+                OnPropertyChanged();
+                RefreshCanExecute();
+            }
+        }
+       
 
         private void RefreshCanExecute()
         {
