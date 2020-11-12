@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using App2.Model;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace App2.ViewModel
@@ -16,12 +17,10 @@ namespace App2.ViewModel
 
             ButtonAction = new Command(execute: async () =>
             {
+                await TextToSpeech.SpeakAsync($"Du har sökt på {_city}");
                 Debug.WriteLine("Här är innan anrop");
                 Debug.WriteLine(_openWeatherMapApi.GetCityUri(_city));
                 Forecast = await _openWeatherMapApi.GetWeather(_openWeatherMapApi.GetCityUri(_city));
-                
-                //Text = fact.Name;
-                //Debug.WriteLine($"data {_forecast.Main.Temp}");
 
             }, canExecute: () => true);
         }
@@ -49,6 +48,15 @@ namespace App2.ViewModel
                 OnPropertyChanged();
                 RefreshCanExecute();
             }
+        }
+
+        private string _fullIcon { get; set; }
+
+        public string FullIcon
+        {
+            get => _fullIcon;
+            set => _fullIcon = value;
+            
         }
 
         public Command ButtonAction { get; set; }

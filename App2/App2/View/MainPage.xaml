@@ -17,20 +17,24 @@
 
               <StackLayout VerticalOptions="CenterAndExpand">
                      <!-- middle controls -->
-                     <Image Source=""></Image>
+                     <Image x:Name="WeatherIcon" Source="{Binding Path=FullIcon}"></Image>
                      
                      <Label Text="{Binding Forecast.Name }"
                             HorizontalOptions="Center"
-                            VerticalOptions="CenterAndExpand" />
+                            VerticalOptions="CenterAndExpand" 
+                            FontSize="Large"/>
                      <Label Text="{Binding Forecast.Main.Temp}"
                             HorizontalOptions="Center"
-                            VerticalOptions="CenterAndExpand"/>
+                            VerticalOptions="CenterAndExpand"
+                            FontSize="Large"/>
                      <Label Text="{Binding Forecast.Main.Feels_Like}"
                             HorizontalOptions="Center"
-                            VerticalOptions="CenterAndExpand"/>
+                            VerticalOptions="CenterAndExpand"
+                            FontSize="Large"/>
                      <Label Text="{Binding Forecast.sys.country}"
                             HorizontalOptions="Center"
-                            VerticalOptions="CenterAndExpand"/>
+                            VerticalOptions="CenterAndExpand"
+                            FontSize="Large"/>
               </StackLayout>
 
               <StackLayout VerticalOptions="End">
