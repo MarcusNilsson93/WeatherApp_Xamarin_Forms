@@ -31,12 +31,12 @@ namespace App2.Model
             return new Uri($"{apibase}{city}{units}{key}"); 
         }
 
-        public async Task<Forecast> GetWeather(Uri fullUri)
+        public async Task<Forecast> GetWeather(string url)
         {
             //Debug.WriteLine(Text);
                 //Connect to api
                 //We can use await on any method returning Task or Task<>
-                var response = await _client.GetAsync(fullUri);
+                var response = await _client.GetAsync(GetCityUri(url));
                 //Debug.WriteLine("This is response object{0}",response);
 
                 if (!response.IsSuccessStatusCode)

@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using App2.Model;
+using App2.Services;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -17,10 +18,9 @@ namespace App2.ViewModel
 
             ButtonAction = new Command(execute: async () =>
             {
-                await TextToSpeech.SpeakAsync($"You have searched for {_city}");
+                await new SpeekNow().Speek(_city);
                 Debug.WriteLine("Här är innan anrop");
-                Debug.WriteLine(_openWeatherMapApi.GetCityUri(_city));
-                Forecast = await _openWeatherMapApi.GetWeather(_openWeatherMapApi.GetCityUri(_city));
+                Forecast = await _openWeatherMapApi.GetWeather(_city);
                 ImgCode = Forecast.Weather[0].icon;
 
             }, canExecute: () => true);
