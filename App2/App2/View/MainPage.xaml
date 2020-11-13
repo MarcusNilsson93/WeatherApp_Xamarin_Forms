@@ -6,13 +6,13 @@
              x:Class="App2.View.MainPage"
              x:DataType="viewModel:MainPageViewModel"
              BackgroundColor="Goldenrod"
-             Title="Searh City"
+             Title="Search City"
              >
 
        <StackLayout>
               <StackLayout  VerticalOptions="Start">
                      <!-- top controls -->
-                     <Editor Placeholder="Sök på en stad" Text="{Binding City}"></Editor>
+                     <Editor Placeholder="Search for city" Text="{Binding City}"></Editor>
               </StackLayout>
 
               <StackLayout VerticalOptions="CenterAndExpand">
@@ -67,7 +67,7 @@
 
               <StackLayout VerticalOptions="End">
                      <!-- bottom controls -->
-                     <Button Text="Get weather" Command="{Binding ButtonAction }"></Button>
+                     <Button Text="Get Weather" Command="{Binding ButtonAction }"></Button>
               </StackLayout>
        </StackLayout>
 

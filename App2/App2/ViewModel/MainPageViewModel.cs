@@ -17,7 +17,7 @@ namespace App2.ViewModel
 
             ButtonAction = new Command(execute: async () =>
             {
-                await TextToSpeech.SpeakAsync($"Du har sökt på {_city}");
+                await TextToSpeech.SpeakAsync($"You have searched for {_city}");
                 Debug.WriteLine("Här är innan anrop");
                 Debug.WriteLine(_openWeatherMapApi.GetCityUri(_city));
                 Forecast = await _openWeatherMapApi.GetWeather(_openWeatherMapApi.GetCityUri(_city));
