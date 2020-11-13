@@ -7,10 +7,6 @@ namespace App2.iOS
 {
     public class PlatformDetails : IMyInterface
     {
-        public PlatformDetails()
-        {
-            
-        }
         public string GetPlatformName()
         {
             return "You are running on IOS";

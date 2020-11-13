@@ -8,9 +8,6 @@ namespace App2.Android
 {
     public class PlatformDetails : IMyInterface
     {
-        public PlatformDetails()
-        {
-        }
         public string GetPlatformName()
         {
             return "You are running on Android";

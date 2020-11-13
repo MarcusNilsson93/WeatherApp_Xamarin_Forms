@@ -17,7 +17,6 @@
 
               <StackLayout VerticalOptions="CenterAndExpand">
                      <!-- middle controls -->
-                     <Image x:Name="WeatherIcon" Source="{Binding Imagesource}"/>
                      <StackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Name:" TextColor="Red"/>
                      </StackLayout>
