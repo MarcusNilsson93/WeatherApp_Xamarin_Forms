@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using App2.Interfaces;
 using App2.Model;
 using App2.Services;
 using Xamarin.Essentials;
@@ -18,12 +19,25 @@ namespace App2.ViewModel
 
             ButtonAction = new Command(execute: async () =>
             {
-                await new SpeekNow().Speek(_city);
+                DeviceDescription = DependencyService.Get<IMyInterface>().GetPlatformName();
+                new SpeekNow().Speek(_city);
                 Debug.WriteLine("Här är innan anrop");
                 Forecast = await _openWeatherMapApi.GetWeather(_city);
-                ImgCode = Forecast.Weather[0].icon;
 
             }, canExecute: () => true);
+        }
+
+        private string _deviceDescription;
+
+        public string DeviceDescription
+        {
+            get => _deviceDescription;
+            set
+            { 
+                _deviceDescription = value;
+                OnPropertyChanged();
+                RefreshCanExecute();
+            }
         }
 
         private string _city = "";

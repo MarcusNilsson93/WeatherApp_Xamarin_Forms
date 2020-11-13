@@ -58,11 +58,11 @@
                             VerticalOptions="CenterAndExpand"
                             FontSize="Large"
                             TextColor="White"/>
-                     <!--<Label Text="{Binding Imagesource}"
+                     <Label Text="{Binding DeviceDescription}"
                             HorizontalOptions="Center"
                             VerticalOptions="CenterAndExpand"
                             FontSize="Large"
-                            TextColor="White"/>-->
+                            TextColor="White"/>
               </StackLayout>
 
               <StackLayout VerticalOptions="End">
